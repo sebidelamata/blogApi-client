@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react' 
 import { useParams } from 'react-router-dom'
 import CommentLikeButton from './CommentLikeButton'
+import Navbar from './Navbar'
 
 const CommentDetail = () => {
     const [comment, setComment] = useState(null)
@@ -85,15 +86,26 @@ const CommentDetail = () => {
     )
 
     if(commentError !== false){
-        return <h1>A Network Error Has Occured</h1>
+        return (
+            <>
+                <Navbar></Navbar>
+                <h1>A Network Error Has Occured</h1>
+            </>
+        )
     }
 
     if(commentLoading !== false){
-        return <h1>Loading...</h1>
+        return (
+            <>
+                <Navbar></Navbar>
+                <h1>Loading...</h1>
+            </>
+        )
     }
 
     return(
         <div className='comment-detail'>
+            <Navbar></Navbar>
             <div className='comment-body'>{comment.comment}</div>
             <div className='comment-publish-date' to={`/comments/${comment._id}`}>{comment.publish_date}</div>
             <CommentLikeButton comment={comment} handleLikeCommentClick={handleLikeCommentClick}/>
