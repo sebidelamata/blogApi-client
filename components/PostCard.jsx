@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react'
 import PostLikeButton from "../components/PostLikeButton"
 import CommentCard from './CommentCard'
+import { Link } from 'react-router-dom'
 
 const PostCard = ({post, handleLikePostClick, comments, handleLikeCommentClick, handleAddCommentClick}) => {
   
     return(
         <li key={post._id} className='post-item'>
-            <div className='post-title'>
+            <Link className='post-title' to={`/posts/${post._id}`}>
                 {post.title}
-            </div>
+            </Link>
             <div className='post-body'>
                 {post.post}
             </div>

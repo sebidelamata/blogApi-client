@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import PostCard from '../components/PostCard'
+import Navbar from '../components/Navbar'
 
 const AllPosts = () => {
     const [allPosts, setAllPosts] = useState([])
@@ -201,6 +202,7 @@ const AllPosts = () => {
 
     return(
         <>
+        <Navbar></Navbar>
         <h1 className='posts-title'>Posts</h1>
         {
             allPosts.length > 0 &&

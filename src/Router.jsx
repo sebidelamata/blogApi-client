@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom' 
 import App from './App'
 import AllPosts from './AllPosts'
+import CommentDetail from '../components/CommentDetail'
 
 
 const Router = () => {
@@ -13,6 +14,14 @@ const Router = () => {
         {
             path: "/posts/all_posts",
             element: <AllPosts />
+        },
+        {
+            path: "/posts/:id",
+            element: <AllPosts />
+        },
+        {
+            path: "/comments/:id",
+            element: <CommentDetail />
         },
     ])
 
